@@ -86,6 +86,34 @@ public class Palabra {
 	 */
 	public void mostrarResultados() {
 		
+		char[] descompuesta = palabraOculta.toCharArray();
+		
+		System.out.print("Progreso: ");
+		for (int i = 0; i < descompuesta.length; i++) {
+			boolean estaEnDescubiertas = false;
+			for (int j = 0; j < letrasDescubiertas.length; j++) {
+				if (descompuesta[i] == letrasDescubiertas[j]) {
+					estaEnDescubiertas = true;
+					break;
+			}
+		}
+			if(estaEnDescubiertas) System.out.print(descompuesta[i]);
+			else System.out.print("_");
+			
+	}
+		System.out.println();
+		
+		System.out.println("Letras acertadas: ");
+		for (int i = 0; i < letrasDescubiertas.length; i++) {
+			if(letrasDescubiertas[i] != '\u0000')System.out.println(letrasDescubiertas[i]);
+		}
+		
+		System.out.println();
+		
+		System.out.println("Letras falladas: ");
+		for (int i = 0; i < letrasFallidas.length; i++) {
+			if(letrasFallidas[i] != '\u0000')System.out.println(letrasFallidas[i]);
+		}
 	}
 
 	/**

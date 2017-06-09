@@ -98,11 +98,13 @@ public class Partida {
 					System.out.println("Lo siento, has perdido. :(");
 					noHaResueltoMal = false;
 			break;
-			default:
+			case 3:
+				System.exit(0);
+				default:
 				break;
 			}
-			pedirLetra();
 		}
-		
+		pedirLetra();
+
 	}
 };
