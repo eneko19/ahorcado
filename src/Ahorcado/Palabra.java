@@ -24,7 +24,7 @@ public class Palabra {
 	private char[] letrasFallidas = new char[NUM_LETRAS_ABECEDARIO];
 
 	/**
-	 * 
+	 * Elige una palabra aleatoria para poder resolverla
 	 */
 	public void elegirPalabra() {
 		String[] palabras = { "Jirafa", "Perro", "Gato", "Gallo", "Elefante", "Rata", "Tortuga" };
@@ -70,6 +70,9 @@ public class Palabra {
 		}
 	}
 
+	/**
+	 * Inserta una letra en una posición vacía
+	 */
 	private void insertarLetra(char letra, char[] destino) {
 		// inserta la letra en la primera posicion vacía
 		for (int i = 0; i < destino.length; i++) {

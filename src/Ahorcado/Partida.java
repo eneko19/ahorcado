@@ -10,6 +10,7 @@ import com.sun.corba.se.spi.resolver.Resolver;
 
 import Ahorcado.Horca;
 import Ahorcado.Palabra;
+import java.lang.Character;
 
 /************************************************************/
 /**
@@ -35,7 +36,7 @@ public class Partida {
 
 	/**
 	 * Solicita una letra al usuario
-	 * @return letra 
+	 * @return letra Devuelve la letra pasandola a minúscula
 	 */
 	public static char pedirLetra() {
 		Scanner entrada = new Scanner (System.in);
@@ -43,7 +44,8 @@ public class Partida {
 		System.out.print("Introduzca una letra: ");
 		char letra = entrada.next().charAt(0);
 		
-		return letra;
+		
+		return Character.toLowerCase(letra);
 		
 	}
 
@@ -66,7 +68,11 @@ public class Partida {
 	public static boolean comprobarFinal() {
 		return horca.comprobarSiPerdido() || palabra.comprobarSiGanado();
 	}
-	
+	/**
+	 * Te permite elegir varias opciones del panel
+	 * 
+	 * @return devuelve el número que has elegido y ejecuta dicho código
+	 */
 	public static int elegirDelMenu(){
 		Scanner entrada = new Scanner (System.in);
 
@@ -89,6 +95,7 @@ public class Partida {
 			switch (elegirDelMenu()) {
 			case 1:
 				palabra.comprobarLetra(pedirLetra());
+				horca.incrementarFallo();
 				mostrarProgreso();
 			break;
 			case 2: 

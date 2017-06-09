@@ -23,14 +23,19 @@ public class Horca {
 	}
 
 	/**
+	 * 
 	 * @return the fallos
 	 */
 	public int getFallos() {
 		return fallos;
 	}
-
+	
+	public void setFallos(int fallos) {
+		this.fallos = fallos;
+	}
+	
 	/**
-	 * 
+	 * Te muestra los fallos en consola
 	 */
 	public void dibujar() {
 		System.out.println("Fallos: " + fallos);
